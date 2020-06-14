@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/hotelback">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="25dp"
+            android:fontFamily="sans-serif-light"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textColor="@color/colorTertiary"
+            android:text="Register"
+            android:textAlignment="center"
+            android:textSize="30dp"
+            android:background="@color/otherWhite">
+
+        </TextView>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/otherWhite">
+
+            <EditText
+                android:id="@+id/editText0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColor="#aaaaaa"
+                android:fontFamily="sans-serif-light"
+                android:hint="Nombres"
+                android:paddingTop="35dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp">
+            </EditText>
+
+            <EditText
+                android:id="@+id/editText0.1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColor="#aaaaaa"
+                android:fontFamily="sans-serif-light"
+                android:hint="Apellidos"
+                android:paddingTop="20dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp">
+            </EditText>
+
+            <EditText
+                android:id="@+id/editText1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textEmailAddress"
+                android:textColor="#aaaaaa"
+                android:fontFamily="sans-serif-light"
+                android:hint="Correo Electronico"
+                android:paddingTop="20dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp">
+            </EditText>
+
+            <EditText
+                android:id="@+id/editText2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPassword"
+                android:textColor="#aaaaaa"
+                android:fontFamily="sans-serif-light"
+                android:hint="Contraseña"
+                android:paddingTop="20dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/checkBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Acepta Los "
+                    android:fontFamily="sans-serif-light"
+                    android:layout_marginLeft="30dp">
+                </CheckBox>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:text="Terminos y Condiciones"
+                    android:paddingTop="13dp"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/holo_blue_dark"
+                    android:textSize="15dp">
+                </TextView>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Registrarse ➔"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="45dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="30dp"
+                android:fontFamily="sans-serif-light"
+                android:textSize="18dp"
+                android:background="@drawable/dw_button1desing">
+            </Button>
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>

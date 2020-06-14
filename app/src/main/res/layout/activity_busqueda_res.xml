@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BusquedaRes">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/hotelback">
+
+        <TextView
+            android:text="BUSQUEDA"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="25dp"
+            >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
+                android:background="@color/otherWhite">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:textSize="16dp"
+                    android:text="Check In">
+
+                </TextView>
+
+                <EditText
+
+                    android:id="@+id/et_CheckIn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:ems="20"
+                    android:focusable="false"
+                    android:hint="01/01/01"
+                    android:inputType="date"
+                    android:maxLines="1"
+                    tools:layout_editor_absoluteY="200dp">
+
+                </EditText>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
+                android:background="@color/otherWhite">
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="sans-serif-light"
+                    android:textSize="16dp"
+                    android:text="Check Out"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                </TextView>
+
+                <EditText
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/et_CheckOut"
+                    android:hint="01/01/01"
+                    android:ems="20"
+                    android:inputType="date"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:maxLines="1"
+                    tools:layout_editor_absoluteY="200dp">
+
+                </EditText>
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_marginTop="25dp"
+            android:text="HABITACION PARA:"
+            android:textColor="@color/otherWhite"
+            android:fontFamily="sans-serif-light"
+            android:textSize="20dp"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <Spinner
+            android:background="@drawable/dw_button1desing"
+            android:id="@+id/spNumClientxml"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp">
+        </Spinner>
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/dw_button1desing"
+            android:fontFamily="sans-serif-light"
+            android:text="Buscar ➔"
+            android:textSize="18dp">
+
+        </Button>
+
+
+    </LinearLayout>
+
+</RelativeLayout>
