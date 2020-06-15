@@ -17,18 +17,20 @@ import java.util.ArrayList;
 public class Room {
     public String number_room;
     public String type;
+    public String urlImage;
 
 
-    public Room(String _numberroom, String _type) {
+    public Room(String _numberroom, String _type, String _urlImage) {
         this.number_room = _numberroom;
         this.type = _type;
+        this.urlImage = _urlImage;
     }
 
     public static ArrayList getCollection() {
         ArrayList<Room> collection = new ArrayList<>();
-        collection.add(new Room("H101", "Doble"));
-        collection.add(new Room("H102", "Matrimonial"));
-        collection.add(new Room("H103", "Simple"));
+        collection.add(new Room("H101", "Doble" , ""));
+        collection.add(new Room("H102", "Matrimonial", ""));
+        collection.add(new Room("H103", "Simple", ""));
         return collection;
     }
 
@@ -48,7 +50,7 @@ public class Room {
                                 for (int i=0; i < list.length(); i++) {
                                     JSONObject o = list.getJSONObject(i);
                                     rooms.add(new Room(o.getString("number_room"),
-                                            o.getString("type")));
+                                            o.getString("type"), o.getString("urlImages")));
                                 }
 
                             } catch (JSONException e) {
