@@ -1,3 +1,10 @@
+/*INTEGRANTES*/
+/*
+LAVADO CHUCO RENZO
+ORTEGA SANTIVAÑEZ DANIEL
+PORTUGAL ROBLES BRUCEE
+*/
+
 package com.example.hospedajeplacerandroid;
 
 import androidx.appcompat.app.AppCompatActivity;
