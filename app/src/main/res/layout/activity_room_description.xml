@@ -23,13 +23,14 @@
             android:orientation="vertical">
 
             <TextView
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="5dp"
                 android:paddingLeft="5dp"
                 android:text=" Habitación N° 101 "
                 android:fontFamily="sans-serif-light"
-                android:textColor="@color/otherWhite"/>
+                />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -42,7 +43,7 @@
                     android:paddingLeft="5dp"
                     android:text=" CALIFICACIÓN:"
                     android:fontFamily="sans-serif-light"
-                    android:textColor="@color/otherWhite"/>
+                    />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -64,13 +65,12 @@
                     android:paddingLeft="5dp"
                     android:text=" Descripción:"
                     android:fontFamily="sans-serif-light"
-                    android:textColor="@color/otherWhite"/>
+                    />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingTop="5dp"
                     android:paddingLeft="5dp"
-                    android:textColor="@color/otherWhite"
                     android:fontFamily="sans-serif-light"
                     android:text=" It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point ofusing Lorem Ipsum is that"/>
             </LinearLayout>
@@ -80,16 +80,15 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="5dp"
                 android:paddingLeft="5dp"
-                android:textColor="@color/otherWhite"
                 android:fontFamily="sans-serif-light"
                 android:text=" Servicios:" />
 
             <TextView
+                android:id="@+id/txtNombre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="5dp"
                 android:paddingLeft="5dp"
-                android:textColor="@color/otherWhite"
                 android:fontFamily="sans-serif-light"
                 android:text=" TODOS LOS SERVICIOS" />
 
@@ -99,7 +98,6 @@
                 android:textAlignment="textEnd"
                 android:paddingRight="10dp"
                 android:textSize="25dp"
-                android:textColor="@color/otherWhite"
                 android:paddingTop="10dp"
                 android:paddingLeft="5dp"
                 android:fontFamily="sans-serif-light"

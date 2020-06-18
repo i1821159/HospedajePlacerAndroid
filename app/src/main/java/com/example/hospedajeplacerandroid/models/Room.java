@@ -5,6 +5,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.example.hospedajeplacerandroid.MainActivity;
+import com.example.hospedajeplacerandroid.RoomDescriptionActivity;
 import com.example.hospedajeplacerandroid.RoomsActivity;
 import com.example.hospedajeplacerandroid.helpers.QueueUtils;
 
@@ -15,12 +16,14 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class Room {
+    public int id;
     public String number_room;
     public String type;
     public String urlImage;
 
 
-    public Room(String _numberroom, String _type, String _urlImage) {
+    public Room(int _id, String _numberroom, String _type, String _urlImage) {
+        this.id=_id;
         this.number_room = _numberroom;
         this.type = _type;
         this.urlImage = _urlImage;
@@ -28,16 +31,48 @@ public class Room {
 
     public static ArrayList getCollection() {
         ArrayList<Room> collection = new ArrayList<>();
-        collection.add(new Room("H101", "Doble" , ""));
-        collection.add(new Room("H102", "Matrimonial", ""));
-        collection.add(new Room("H103", "Simple", ""));
+        collection.add(new Room(0,"H101", "Doble" , ""));
+        collection.add(new Room(0,"H102", "Matrimonial", ""));
+        collection.add(new Room(0,"H103", "Simple", ""));
         return collection;
+    }
+
+    public static void injectServicesRoomFromCloud(final QueueUtils.QueueObject o,
+                                           final Room room,
+                                           final RoomDescriptionActivity _interface){
+        String url = "https://polar-thicket-71266.herokuapp.com/api/services/room/" + room.id;
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
+                (Request.Method.GET, url, null,
+                        new Response.Listener<JSONObject>() {
+
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        if (response.has("data")) {
+
+                            try {
+                                JSONObject objeto = response.getJSONObject("data");
+                                room.number_room = objeto.getString("name");
+                                room.type = objeto.getString("state");
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                            _interface.refresh(); // Esta función debemos implementarla
+                            // en nuestro activity
+                        }
+                    }
+                }, new Response.ErrorListener() {
+
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+                });
     }
 
     public static void injectRoomsFromCloud(final QueueUtils.QueueObject o,
                                                final ArrayList<Room> rooms,
                                                final RoomsActivity _interface) {
-        String url = "https://polar-thicket-71266.herokuapp.com/api/rooms";
+        String url = "https://polar-thicket-71266.herokuapp.com/api/rooms/all";
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
 
@@ -49,7 +84,7 @@ public class Room {
                                 JSONArray list = response.getJSONArray("data");
                                 for (int i=0; i < list.length(); i++) {
                                     JSONObject o = list.getJSONObject(i);
-                                    rooms.add(new Room(o.getString("number_room"),
+                                    rooms.add(new Room(o.getInt("id"),  o.getString("number_room"),
                                             o.getString("type"), o.getString("urlImages")));
                                 }
 
