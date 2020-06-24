@@ -22,9 +22,9 @@ public class Room {
     public String urlImage;
 
 
-    public Room(int _id, String _numberroom, String _type, String _urlImage) {
-        this.id=_id;
-        this.number_room = _numberroom;
+    public Room(int _id, String _number_room, String _type, String _urlImage) {
+        this.id = _id;
+        this.number_room = _number_room;
         this.type = _type;
         this.urlImage = _urlImage;
     }
@@ -37,10 +37,10 @@ public class Room {
         return collection;
     }
 
-    public static void injectServicesRoomFromCloud(final QueueUtils.QueueObject o,
+    public static void injectRoomFromCloud(final QueueUtils.QueueObject o,
                                            final Room room,
                                            final RoomDescriptionActivity _interface){
-        String url = "https://polar-thicket-71266.herokuapp.com/api/services/room/" + room.id;
+        String url = "https://polar-thicket-71266.herokuapp.com/api/rooms/" + room.id;
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (Request.Method.GET, url, null,
                         new Response.Listener<JSONObject>() {
@@ -51,8 +51,9 @@ public class Room {
 
                             try {
                                 JSONObject objeto = response.getJSONObject("data");
-                                room.number_room = objeto.getString("name");
-                                room.type = objeto.getString("state");
+                                room.number_room = objeto.getString("number_room");
+                                room.type = objeto.getString("type");
+                                room.urlImage = objeto.getString("urlImages");
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
@@ -67,6 +68,7 @@ public class Room {
 
                     }
                 });
+        o.addToRequestQueue(jsonObjectRequest);
     }
 
     public static void injectRoomsFromCloud(final QueueUtils.QueueObject o,

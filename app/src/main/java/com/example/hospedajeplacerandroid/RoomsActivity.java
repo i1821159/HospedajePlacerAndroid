@@ -42,8 +42,9 @@ public class RoomsActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //AQUI SE SOLICITA MAS DATOS EN LA NUBE
-                Room registro = items.get(position);
-                showDetails(registro);
+                
+          Room registro = items.get(position);
+          showDetails(registro);
 
             }
         });

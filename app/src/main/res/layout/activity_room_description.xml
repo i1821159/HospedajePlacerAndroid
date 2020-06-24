@@ -6,116 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".RoomDescriptionActivity">
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="130dp"
-            android:layout_height="300dp"
-            android:src="@android:drawable/ic_menu_gallery" />
-
-        <LinearLayout
+        <com.android.volley.toolbox.NetworkImageView
+            android:id="@+id/imgFoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/txtHabitacionName"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:text=" NOMBRE DE HABITACION" />
 
-            <TextView
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="5dp"
-                android:paddingLeft="5dp"
-                android:text=" Habitación N° 101 "
-                android:fontFamily="sans-serif-light"
-                />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="5dp"
-                    android:paddingLeft="5dp"
-                    android:text=" CALIFICACIÓN:"
-                    android:fontFamily="sans-serif-light"
-                    />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="5dp"
-                    android:paddingLeft="5dp"
-                    android:text=" XXXX "
-                    android:fontFamily="sans-serif-light"
-                    android:textColor="@color/otherWhite"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="5dp"
-                    android:paddingLeft="5dp"
-                    android:text=" Descripción:"
-                    android:fontFamily="sans-serif-light"
-                    />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="5dp"
-                    android:paddingLeft="5dp"
-                    android:fontFamily="sans-serif-light"
-                    android:text=" It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point ofusing Lorem Ipsum is that"/>
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="5dp"
-                android:paddingLeft="5dp"
-                android:fontFamily="sans-serif-light"
-                android:text=" Servicios:" />
-
-            <TextView
-                android:id="@+id/txtNombre"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="5dp"
-                android:paddingLeft="5dp"
-                android:fontFamily="sans-serif-light"
-                android:text=" TODOS LOS SERVICIOS" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="textEnd"
-                android:paddingRight="10dp"
-                android:textSize="25dp"
-                android:paddingTop="10dp"
-                android:paddingLeft="5dp"
-                android:fontFamily="sans-serif-light"
-                android:text="S/105.00" />
-
-            <Button
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginRight="7dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:textSize="12dp"
-                android:fontFamily="sans-serif-light"
-                android:text="Seleccionar Habitación ➔"
-                android:background="@drawable/dw_button1desing"/>
-        </LinearLayout>
     </LinearLayout>
+
+
 
 
 </RelativeLayout>
